@@ -4,7 +4,7 @@ Program for extracting meshes, textures, skeletons, and animations used for each
 
 Models can be extracted to .dae format, intended for use in Blender, and .obj format. Additionally, meshes for each frame of animation can be produced as separate .obj files.
 
-For various reasons, the final .dae files produced by this program are not totally accurate when imported to Blender. However most of the models/animations appear to be correct. See the "Errors" section for details.
+For various reasons, the final .dae files produced by this program are not totally accurate when imported to Blender. However, most of the models/animations appear to be correct. See the "Errors" section for details.
 
 Extracting all 683 models to .dae format uses approximately 6.2GB of space. Extracting all models to .obj format uses approximately 800MB of space.
 
