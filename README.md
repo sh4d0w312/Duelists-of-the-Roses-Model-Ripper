@@ -12,10 +12,17 @@ This program has been verified to work only on the MONSTER.MRG file taken from a
 
 ## How to use this program
 
+Compiling:
+
+Since this code only uses the standard library, you can compile the code using g++ with the command
+
+``g++ main.cpp MonsterList.cpp Joint.cpp Skeleton.cpp TexRipper.cpp ModelRipper.cpp``
+
 To rip the models:
 
-1. Drag the MONSTER.MRG file from your SLUS-20515 copy of Duelists of the Roses onto the .exe file
-2. Follow the program's instructions to specify which models you want to rip and to which format
+1. Copy the MONSTER.MRG file from your SLUS-20515 copy of Duelists of the Roses to the same directory as the .exe for this program.
+2. Drag the MONSTER.MRG file onto the .exe file
+3. Follow the program's instructions to specify which models you want to rip and to which format
 
 The program will create a "models" directory inside of its directory, with subdirectories for each model. If you are ripping a large number of models, the program may take a while to finish.
 
@@ -93,6 +100,20 @@ The following monsters are known to have errors in animations arising as a resul
 This appears to be a common problem in animations. For most models it is unnoticeable, if there is any, whereas for some the pinching is obvious (e.g. #191, Swordsman from a Foreign Land). Typically the worst affected models are those used for humanoid monsters.
 
 I'm not sure what is causing this behaviour. It could be a result of non-uniform scaling, negative skinning weights, errors in the .dae file produced by the program, or some feature of Blender that I'm not aware of.
+
+## Things outside the scope of this project
+
+**Camera Animations:**
+
+There appears to be data in MONSTER.MRG which corresponds to camera animations. These would be used to set the position and rotation of the camera during attack animations, for example.
+
+**Animated Textures:**
+
+As far as I can tell, none of the data in MONSTER.MRG is used to animate any of the textures. As such, animated textures are outside the scope of this project.
+
+**Additional Textures**
+
+There are additional textures associated with each monster. These are likely used as part of attack animations, but are not referenced in any way by the model's data. The TexRipper class could be used to rip these textures, but it would involve checking all of the unused memory for the correct header format and the ripped texture wouldn't be used anywhere anyway.
 
 ## Additional Notes
 
